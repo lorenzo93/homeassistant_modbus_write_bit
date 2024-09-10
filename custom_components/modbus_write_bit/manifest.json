@@ -1,0 +1,11 @@
+{
+	"domain": "modbus_write_bit",
+	"name": "Modbus Write Bits",
+	"codeowners": [],
+	"dependencies": [
+		"modbus"
+	],
+	"documentation": "https://github.com/lorenzo93/homeassistant_modbus_write_bit",
+	"iot_class": "local_polling",
+	"version": "1.0.0"
+}
