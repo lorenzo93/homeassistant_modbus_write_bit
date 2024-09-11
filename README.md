@@ -1,7 +1,8 @@
 # Homeassistant Modbus Write Bit integration
 
 Homeassistant integration for writing a single bit to a Modbus register.
-
+The operation is NOT performed using FC22 (modbus function to write single bit) since most of the devices does not have support for that.
+The operation is performed doing a read on the register, changing the bit and writing it back.
 
 ## Installation
 
