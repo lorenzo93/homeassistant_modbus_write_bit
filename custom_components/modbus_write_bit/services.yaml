@@ -1,6 +1,9 @@
 write_bit:
+  name: write bit
+  description: Allow to write a single bit to a Modbus register
   fields:
     address:
+      name: Address number
       description: Modbus register address
       required: true
       selector:
@@ -8,6 +11,7 @@ write_bit:
           min: 0
           max: 65535
     slave:
+      name: Slave number
       description: Modbus slave number
       required: true
       selector:
@@ -15,18 +19,22 @@ write_bit:
           min: 1
           max: 255
     bit_numb:
+      name: Bit number
       description: Bit number to change
       required: true
       example: "6"
       selector:
         object:
     bit_value:
+      name: Bit value
       description: Value to set the bit
       required: true
       example: "0 or 1"
       selector:
         object:
     hub:
+      name: Modbus Hub
+      description: the modbus hub to use
       example: "hub1"
       default: "modbus_hub"
       selector:
