@@ -35,11 +35,8 @@ if TYPE_CHECKING:
 _LOGGER = logging.getLogger(__name__)
 
 
-async def async_modbus_bits_setup(
-    hass: HomeAssistant,
-    config: ConfigType,
-) -> bool:
-    """Set up Modbus component."""
+async def async_modbus_bits_setup(hass: HomeAssistant) -> bool:
+    """Set up Modbus Write Bit component."""
 
     async def async_write_bit(service: ServiceCall) -> None:
         """Write Modbus bit."""
@@ -61,9 +58,7 @@ async def async_modbus_bits_setup(
         else:
             value &= ~(1 << bit_numb)
 
-        await hub.async_pb_call(
-            slave, address, int(float(value)), CALL_TYPE_WRITE_REGISTER
-        )
+        await hub.async_pb_call(slave, address, int(float(value)), CALL_TYPE_WRITE_REGISTER)
 
     hass.services.async_register(
         DOMAIN,
