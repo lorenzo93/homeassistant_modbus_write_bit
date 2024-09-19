@@ -30,7 +30,6 @@ from .const import (
 
 if TYPE_CHECKING:
     from homeassistant.core import HomeAssistant, ServiceCall
-    from homeassistant.helpers.typing import ConfigType
 
 _LOGGER = logging.getLogger(__name__)
 
