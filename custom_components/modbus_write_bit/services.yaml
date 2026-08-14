@@ -10,6 +10,7 @@ write_bit:
         number:
           min: 0
           max: 65535
+          mode: box
     slave:
       name: Slave number
       description: Modbus slave number
@@ -18,24 +19,28 @@ write_bit:
         number:
           min: 1
           max: 255
+          mode: box
     bit_numb:
       name: Bit number
       description: Bit number to change
       required: true
       example: "6"
       selector:
-        object:
+        number:
+          min: 1
+          max: 16
     bit_value:
       name: Bit value
       description: Value to set the bit
       required: true
       example: "0 or 1"
       selector:
-        object:
+        boolean:
     hub:
       name: Modbus Hub
       description: the modbus hub to use
       example: "hub1"
       default: "modbus_hub"
+      required: false
       selector:
         text:
